@@ -48,7 +48,7 @@
 extern crate include_dir_impl;
 #[macro_use]
 extern crate proc_macro_hack;
-extern crate glob;
+
 
 mod dir;
 mod file;
