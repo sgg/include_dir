@@ -52,7 +52,9 @@ impl ToTokens for Dir {
         let dirs = &self.dirs;
 
         let tok = quote! {
-            $crate::Dir {
+            // FIXME: $crate does not actually work w/ proc macros rust-lang/rust#/54363
+            // $crate::Dir {
+            include_dir::Dir {
                 path: #root_rel_path,
                 files: &[#(
                     #files

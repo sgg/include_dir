@@ -5,18 +5,19 @@
 extern crate proc_macro;
 
 use proc_macro::TokenStream;
-use proc_macro_hack::proc_macro_hack;
+//use proc_macro_hack::proc_macro_hack;
 use quote::quote;
 use syn::{parse_macro_input, LitStr};
 
-use crate::dir::Dir;
 use std::env;
 use std::path::PathBuf;
+use crate::dir::Dir;
 
 mod dir;
 mod file;
 
-#[proc_macro_hack]
+//#[proc_macro_hack]
+#[proc_macro]
 pub fn include_dir(input: TokenStream) -> TokenStream {
     let input: LitStr = parse_macro_input!(input as LitStr);
     let crate_root = env::var("CARGO_MANIFEST_DIR").unwrap();

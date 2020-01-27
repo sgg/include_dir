@@ -29,7 +29,9 @@ impl ToTokens for File {
         let abs_path = self.abs_path.display().to_string();
 
         let tok = quote! {
-            $crate::File {
+            // FIXME: $crate does not actually work w/ proc macros rust-lang/rust#/54363
+            // $crate::File {
+            include_dir::File {
                 path: #root_rel_path,
                 contents: include_bytes!(#abs_path),
             }

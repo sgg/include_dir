@@ -1,4 +1,6 @@
+#![feature(proc_macro_hygiene)]
 use include_dir::{include_dir, Dir};
+//use include_dir::include_dir;
 use std::path::Path;
 
 const PARENT_DIR: Dir<'_> = include_dir!(".");

@@ -18,7 +18,6 @@ branch = "master"
 repository = "Michael-F-Bryan/include_dir"
 
 [dependencies]
-proc-macro-hack = "0.5"
 syn = "1"
 quote = "1"
 failure = "0.1"

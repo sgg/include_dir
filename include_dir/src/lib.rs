@@ -36,6 +36,7 @@
 //! functionality. These are:
 //!
 //! - **example:** compile in an example of the embedded directory tree
+#![feature(proc_macro_hygiene)]     // FIXME: Remove
 
 #![deny(
     missing_docs,
@@ -46,8 +47,10 @@
 #[allow(unused_imports)]
 #[macro_use]
 extern crate include_dir_impl;
+/* FIXME: Remove
 #[macro_use]
 extern crate proc_macro_hack;
+*/
 
 mod dir;
 mod file;
@@ -61,9 +64,11 @@ pub use crate::file::File;
 pub use crate::globs::DirEntry;
 
 #[doc(hidden)]
-#[proc_macro_hack]
+//#[proc_macro_hack]
 pub use include_dir_impl::include_dir;
 
+/* FIXME: Remove comment
 /// Example the output generated when running `include_dir!()` on itself.
 #[cfg(feature = "example-output")]
 pub static GENERATED_EXAMPLE: Dir = include_dir!(".");
+*/
